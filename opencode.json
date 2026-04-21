@@ -1,0 +1,31 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["@warp-dot-dev/opencode-warp"],
+  "formatter": false,
+  "mcp": {
+    "chrome-devtools": {
+      "type": "local",
+      "command": [
+        "npx",
+        "chrome-devtools-mcp@latest",
+        "--autoConnect"
+      ],
+      "enabled": true,
+      "timeout": 10000
+    },
+    "sonarqube": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "sonarqube-mcp-server@latest"
+      ],
+      "enabled": true,
+      "timeout": 10000,
+      "environment": {
+        "SONARQUBE_URL": "https://sonarqube.fleetenable.com",
+        "SONARQUBE_TOKEN": "squ_648329a7e133b757df58b12feb508df0b0099771"
+      }
+    }
+  }
+}
